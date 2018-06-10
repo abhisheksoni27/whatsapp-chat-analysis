@@ -8,11 +8,11 @@ import matplotlib.pyplot as plt
 
 sentient_analyzer = SentimentIntensityAnalyzer()
 
-def cleanText(filename, ownerName="Abhishek Soni"):
+def cleanText(filename):
 
     chat = open(filename)
-    personName = filename.split('.')[0]
     chatText = chat.read()
+
     # 01/09/17, 11:34 PM - Subia:
     pattern = "(\d+\/\d+\/\d+)(,)(\s)(\d+:\d+)(\s)(\w+)(\s)(-)(\s\w+)*(:)"
 
