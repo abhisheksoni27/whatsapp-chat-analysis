@@ -5,7 +5,6 @@ import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import matplotlib.pyplot as plt
 
-
 sentient_analyzer = SentimentIntensityAnalyzer()
 
 def cleanText(filename):
