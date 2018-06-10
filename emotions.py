@@ -1,16 +1,12 @@
+import sys
 import re
 import matplotlib.pyplot as plt
-import numpy as np
-import indicoio
 import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import matplotlib.pyplot as plt
 
 
 sentient_analyzer = SentimentIntensityAnalyzer()
-
-indicoio.config.api_key = '26837191c44dd6a7560a688e3307920d'
-
 
 def cleanText(filename, ownerName="Abhishek Soni"):
 
@@ -67,7 +63,7 @@ def analyze(name):
             autopct='%1.1f%%', startangle=140)
 
     plt.axis('equal')
-    plt.title("Sentiment Analysis - Chat with Innaya")
+    plt.title("Sentiment Analysis - Chat with {0}".format(name.capitalize()))
     plt.show()
 
-analyze('innaya')
+analyze(sys.argv[1])
