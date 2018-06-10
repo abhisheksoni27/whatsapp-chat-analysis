@@ -29,7 +29,7 @@ def cleanText(filename):
 
     return lines
 
-
+negative_sentences = [];
 def analyze(name):
     linesList = cleanText(name + '.txt')
     neutral, negative, positive = 0, 0, 0
@@ -45,7 +45,10 @@ def analyze(name):
         if maxAttribute == "neu":
             neutral += 1
         elif maxAttribute == "neg":
-            negative += 1
+            # Remove EMOJIS
+            if re.match(r'^[\w]', sentence):
+                negative_sentences.append(sentence)
+                negative += 1
         else:
             positive += 1
 
@@ -66,3 +69,7 @@ def analyze(name):
     plt.show()
 
 analyze(sys.argv[1])
+negative_sentences_file = open('negative_sentences - {0}.txt'.format(sys.argv[1]), 'w')
+
+for item in negative_sentences:
+  negative_sentences_file.write("%s\n" % item)
