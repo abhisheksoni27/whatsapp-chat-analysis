@@ -5,7 +5,7 @@ import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import matplotlib.pyplot as plt
 
-sentient_analyzer = SentimentIntensityAnalyzer()
+sentiment_analyzer = SentimentIntensityAnalyzer()
 
 def cleanText(filename):
 
@@ -37,7 +37,7 @@ def analyze(name):
     for index, sentence in enumerate(linesList):
         print("Processing {0}%".format(str((index * 100) / len(linesList))))
 
-        scores = sentient_analyzer.polarity_scores(sentence)
+        scores = sentiment_analyzer.polarity_scores(sentence)
         scores.pop('compound', None)
 
         maxAttribute = max(scores, key=lambda k: scores[k])
