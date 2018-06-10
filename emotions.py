@@ -12,7 +12,7 @@ def cleanText(filename):
     chat = open(filename)
     chatText = chat.read()
 
-    # 01/09/17, 11:34 PM - Subia:
+    # 01/09/17, 11:34 PM - Innaya:
     pattern = "(\d+\/\d+\/\d+)(,)(\s)(\d+:\d+)(\s)(\w+)(\s)(-)(\s\w+)*(:)"
 
     mediaPattern = "(\<Media omitted\>)"
