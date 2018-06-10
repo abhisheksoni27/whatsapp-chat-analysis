@@ -3,7 +3,6 @@ import re
 import matplotlib.pyplot as plt
 import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
-import matplotlib.pyplot as plt
 
 sentiment_analyzer = SentimentIntensityAnalyzer()
 
