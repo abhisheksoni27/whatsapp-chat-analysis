@@ -3,34 +3,12 @@ import re
 import matplotlib.pyplot as plt
 import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
-
+from CleanText import CleanText
 sentiment_analyzer = SentimentIntensityAnalyzer()
-
-def cleanText(filename):
-
-    chat = open(filename)
-    chatText = chat.read()
-
-    # 01/09/17, 11:34 PM - Innaya:
-    pattern = "(\d+\/\d+\/\d+)(,)(\s)(\d+:\d+)(\s)(\w+)(\s)(-)(\s\w+)*(:)"
-
-    mediaPattern = "(\<Media omitted\>)"
-    regexMedia = re.compile(mediaPattern, flags=re.M)
-    regex = re.compile(pattern, flags=re.M)
-
-    clean = regex.sub("", chatText)
-    clean = regexMedia.sub("", clean)
-    lines = []
-
-    for line in clean.splitlines():
-        if line.strip() is not "":
-            lines.append(line.strip())
-
-    return lines
 
 negative_sentences = [];
 def analyze(name):
-    linesList = cleanText(name + '.txt')
+    linesList = CleanText().clean(name + '.txt')
     neutral, negative, positive = 0, 0, 0
 
     for index, sentence in enumerate(linesList):
