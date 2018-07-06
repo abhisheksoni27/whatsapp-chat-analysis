@@ -4,7 +4,7 @@ Analyze phrase usage in a WhatsApp Chat, and plot a bar chart with the most comm
 
 Libraries used:
 
-* scikit-learn
+* nltk
 * numpy
 * matplotlib
 
