@@ -2,13 +2,13 @@ import sys
 import re
 import matplotlib.pyplot as plt
 import nltk
+from utilities import cleanText 
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
-from CleanText import CleanText
 sentiment_analyzer = SentimentIntensityAnalyzer()
 
 negative_sentences = [];
 def analyze(name):
-    linesList = CleanText().clean(name + '.txt')
+    linesList = cleanText(name + '.txt')
     neutral, negative, positive = 0, 0, 0
 
     for index, sentence in enumerate(linesList):
