@@ -6,14 +6,15 @@ from utilities import cleanText
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 sentiment_analyzer = SentimentIntensityAnalyzer()
 
-negative_sentences = [];
 def analyze(name):
     linesList = cleanText(name + '.txt')
     neutral, negative, positive = 0, 0, 0
 
     for index, sentence in enumerate(linesList):
         print("Processing {0}%".format(str((index * 100) / len(linesList))))
-
+        
+        if re.match(r'^[\w]', sentence) is None:
+            continue
         scores = sentiment_analyzer.polarity_scores(sentence)
         scores.pop('compound', None)
 
@@ -22,10 +23,7 @@ def analyze(name):
         if maxAttribute == "neu":
             neutral += 1
         elif maxAttribute == "neg":
-            # Remove EMOJIS
-            if re.match(r'^[\w]', sentence):
-                negative_sentences.append(sentence)
-                negative += 1
+            negative += 1
         else:
             positive += 1
 
@@ -46,7 +44,3 @@ def analyze(name):
     plt.show()
 
 analyze(sys.argv[1])
-negative_sentences_file = open('negative_sentences - {0}.txt'.format(sys.argv[1]), 'w')
-
-for item in negative_sentences:
-  negative_sentences_file.write("%s\n" % item)

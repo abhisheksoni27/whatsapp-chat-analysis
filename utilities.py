@@ -4,7 +4,7 @@ import re
 # CLEAN TEXT
 ##############################
 
-def cleanText(self, filename):    
+def cleanText(filename):    
     chat = open(filename)
     chatText = chat.read()
 
