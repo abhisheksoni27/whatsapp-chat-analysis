@@ -1,6 +1,6 @@
 # whatsapp-chat-analysis
 
-Analyze phrase usage in a WhatsApp Chat, and plot a bar chart with the most common occurences.
+Mine WhatsApp chat data a draw awesome inferences. Phrase Frequency plotting and a lot more!
 
 Libraries used:
 
