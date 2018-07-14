@@ -11,7 +11,7 @@ def analyze(name):
     neutral, negative, positive = 0, 0, 0
 
     for index, sentence in enumerate(linesList):
-        print("Processing {0}%".format(str((index * 100) / len(linesList))))
+        # print("Processing {0}%".format(str((index * 100) / len(linesList))))
         
         if re.match(r'^[\w]', sentence) is None:
             continue
