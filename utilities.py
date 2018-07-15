@@ -13,6 +13,7 @@ regexDate = re.compile(dateAndTimepattern, flags=re.M)
 def cleanText(filename):    
     chat = open(filename)
     chatText = chat.read()
+    chat.close()
 
     # 01/09/17, 11:34 PM - Amfa:
 
