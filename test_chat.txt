@@ -1,3 +1,8 @@
+10/09/16, 1:10 PM - Person 1: You should come over?
+10/09/16, 2:10 PM - Person 2: Yes
+10/09/16, 3:10 PM - Person 1: When?
+10/09/16, 4:10 PM - Person 2: In an hour, maybe?
+10/09/16, 5:10 PM - Person 2: See you!
 10/09/16, 6:10 PM - Person 1: Person 2?
 10/09/16, 7:10 PM - Person 2: Yes?
 10/09/16, 8:10 PM - Person 1: How are you?
@@ -17,8 +22,3 @@
 10/09/16, 10:10 AM - Person 1: We had a ten hour gaming session
 10/09/16, 11:10 AM - Person 1: And it wasn't easy
 10/09/16, 12:10 PM - Person 1: To be honest
-10/09/16, 1:10 PM - Person 1: You should come over?
-10/09/16, 2:10 PM - Person 2: Yes
-10/09/16, 3:10 PM - Person 1: When?
-10/09/16, 4:10 PM - Person 2: In an hour, maybe?
-10/09/16, 5:10 PM - Person 2: See you!
