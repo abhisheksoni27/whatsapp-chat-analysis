@@ -7,7 +7,7 @@ import re
 mediaPattern = r"(\<Media omitted\>)" # Because it serves no purpose
 regexMedia = re.compile(mediaPattern, flags=re.M)
 
-dateAndTimepattern = r"(\d+\/\d+\/\d+)(,)(\s)(\d+:\d+)(\s)(\w+)(\s)(-)(\s\w+)*(:)"
+dateAndTimepattern = r"(\d+\/\d+\/\d+)(,)(\s)(\d+:\d+)(\s)(-)(\s\w+)*(:)"
 regexDate = re.compile(dateAndTimepattern, flags=re.M)
 
 def cleanText(filename):    

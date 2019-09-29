@@ -2,19 +2,21 @@ import sys
 import re
 import matplotlib.pyplot as plt
 import nltk
-from utilities import cleanText 
+from utilities import cleanText
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 sentiment_analyzer = SentimentIntensityAnalyzer()
 
+
 def analyze(name):
-    linesList = cleanText(name + '.txt')
+    linesList = cleanText(name)
     neutral, negative, positive = 0, 0, 0
 
     for index, sentence in enumerate(linesList):
         # print("Processing {0}%".format(str((index * 100) / len(linesList))))
-        
+
         if re.match(r'^[\w]', sentence) is None:
             continue
+
         scores = sentiment_analyzer.polarity_scores(sentence)
         scores.pop('compound', None)
 
@@ -42,5 +44,6 @@ def analyze(name):
     plt.axis('equal')
     plt.title("Sentiment Analysis - Chat with {0}".format(name.capitalize()))
     plt.show()
+
 
 analyze(sys.argv[1])
