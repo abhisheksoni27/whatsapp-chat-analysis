@@ -2,13 +2,14 @@ import re
 import sys
 import datetime
 import matplotlib.pyplot as plt
+from tqdm import tqdm
 
 
 def split_text(filename):
     """
     Split file contents by newline.
     """
-    chat = open(filename)
+    chat = open(filename, encoding="utf8")
     chatText = chat.read()
     return chatText.splitlines()
 
@@ -49,8 +50,8 @@ def distributeByAmPm(linesText):
     timeRegex = re.compile("\d+\/\d+\/\d+, (\d+\:\d+)")
 
     AM, PM = [], []
-    for index, line in enumerate(linesText):
-        print(index)
+    for index, line in tqdm(enumerate(linesText)):
+#         print(index)
         matches = re.findall(timeRegex, line)
         if (len(matches) > 0):
             match = datetime.datetime.strptime(
@@ -73,6 +74,7 @@ def plot_graph(time_groups, name):
     plt.xlabel('Time groups with 1 hour interval')
     plt.ylabel('Frequency')
     plt.title("Timing Analysis - Chat with {0}".format(name.capitalize()))
+    plt.grid(1)
     plt.show()
 
 
