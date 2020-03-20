@@ -11,7 +11,7 @@ dateAndTimepattern = r"(\d+\/\d+\/\d+)(,)(\s)(\d+:\d+)(\s)(-)(\s\w+)*(:)"
 regexDate = re.compile(dateAndTimepattern, flags=re.M)
 
 def cleanText(filename):    
-    chat = open(filename)
+    chat = open(filename, "r", encoding="utf8")
     chatText = chat.read()
     chat.close()
 
